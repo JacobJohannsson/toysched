@@ -1,0 +1,16 @@
+# Sanity check: single-task jobs, perfect scaling (α = κ = 0, so every task runs at
+# full speed on all S slots), and no capacity or footprint resources. The machine is
+# then one server of speed S, and SRPT minimizes mean job latency.
+height_min: 1
+height_max: 1
+serial_fraction_median: 0.0
+peak_median_frac: null
+capacity_resources: []
+capacity_limits: []
+rho_median: []
+footprint_resources: []
+footprint_limits: []
+footprint_overflow: []
+miss_penalty: []
+footprint_shared_median: []
+footprint_slot_median: []

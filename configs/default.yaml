@@ -1,0 +1,45 @@
+# Defaults from the requirements doc. Every key is optional; missing keys keep the
+# default in toysched/config.py.
+num_slots: 8
+
+# Capacity resources: consumed at a rate, load adds once per slot
+capacity_resources: [memory_bandwidth, storage_io]
+capacity_limits: [1.0, 1.0]
+
+# Footprint resources: occupied, load adds once per task plus a per-slot part.
+# footprint_overflow names the capacity resource misses go to, or null.
+footprint_resources: [cache]
+footprint_limits: [1.0]
+footprint_overflow: [memory_bandwidth]
+miss_penalty: [3.0]
+footprint_shared_median: [0.25]
+footprint_slot_median: [0.02]
+footprint_log_std: 1.0
+
+num_jobs: 100
+workload_mode: batch
+arrival_rate: 0.1
+decision_interval: 2.5
+max_visible_jobs: 20
+height_mean: 3.0
+height_std: 1.0
+height_min: 1
+height_max: 6
+task_count_mean_frac: 0.5
+task_count_std_frac: 0.25
+level_mean_frac: 0.3
+edge_prob: 0.4
+edge_decay: 1.5
+
+# Dirichlet order: compute, footprint resources, capacity resources
+heavy_prob: 0.1
+dirichlet_light: [5.0, 2.0, 2.0, 0.5]
+dirichlet_heavy: [2.0, 1.0, 1.0, 6.0]
+rho_median: [0.3, 0.6]
+rho_log_std: 0.3
+work_log_mean: 2.302585092994046  # ln 10
+work_log_std: 0.75
+serial_fraction_median: 0.02  # median of α_j
+serial_fraction_log_std: 0.75
+peak_median_frac: 4.0  # median of k^peak_j as a multiple of S; null means κ_j = 0
+peak_log_std: 1.0

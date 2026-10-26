@@ -1,0 +1,7 @@
+# Don't add pycache
+/**/__pycache__/
+.pytest_cache/
+.ruff_cache/
+
+# Don't add run outputs
+results/
